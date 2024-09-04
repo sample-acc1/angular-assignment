@@ -1,0 +1,24 @@
+<section>
+  <form>
+    <input type="text" placeholder="Filter by title" #filter>
+    <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+  </form>
+</section>
+<section class="results">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todoItem of filteredTodoList">
+        <td>{{ todoItem.id }}</td>
+        <td>{{ todoItem.title }}</td>
+        <td>{{ todoItem.completed ? 'Yes' : 'No' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
